@@ -1,0 +1,35 @@
+body, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styl tła */
+body {
+    background-image: url('sciezka/do/BLUE.jpg'); /* Zmień 'sciezka/do/tla.jpg' na ścieżkę do swojego zdjęcia tła */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Zapobiega pojawianiu się pasków przewijania */
+}
+
+/* Styl napisu */
+h1 {
+    font-size: 36px;
+    animation: colorChange 5s linear infinite alternate;
+    text-align: center;
+}
+
+/* Animacja zmiany koloru tekstu */
+@keyframes colorChange {
+    0% {
+        color: blue;
+    }
+    100% {
+        color: white;
+    }
+}
