@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smurf Clicker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('png/Blue.png'); /* Dodaj obrazek tła */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        #ciastko {
+            width: 200px;
+            height: 200px;
+            background-image: url('png/cookie.png'); /* Dodaj obrazek ciastka */
+            background-size: cover;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            animation: ruszCiastko 0.5s ease-in-out; /* Dodaj animację */
+        }
+
+        @keyframes ruszCiastko {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #ciastko-kontener {
+            margin-top: 50px;
+        }
+
+        #wynik {
+            font-size: 24px;
+            margin-top: 20px;
+            color: white; /* Dodaj biały kolor tekstu dla lepszej widoczności na tle */
+        }
+    </style>
+</head>
+<body>
+    <div id="ciastko-kontener">
+        <button id="ciastko" onclick="kliknijCiastko()"></button>
+    </div>
+    <p id="wynik">Wynik: <span id="wynikLicznik">0</span></p>
+    <script>
+        let wynik = 0;
+
+        function kliknijCiastko() {
+            wynik++;
+            document.getElementById('wynikLicznik').textContent = wynik;
+            document.getElementById('ciastko').style.animation = 'none';
+            setTimeout(() => {
+                document.getElementById('ciastko').style.animation = 'ruszCiastko 0.5s ease-in-out';
+            }, 10);
+        }
+    </script>
+</body>
+</html>
