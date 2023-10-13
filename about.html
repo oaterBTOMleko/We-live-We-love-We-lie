@@ -36,12 +36,6 @@
         nav a:hover {
             background-color: #555;
         }
-
-        #muteButton {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
     </style>
 </head>
 <body>
@@ -59,29 +53,7 @@
     </div>
 
     <div id="content">
-     strona
+        W tej grze musisz klikać smerfa by dostać punkty.
     </div>
-
-    <audio id="backgroundMusic" loop autoplay>
-        <source src="audio/smurf.mp3" type="audio/mpeg">
-        Twoja przeglądarka nie obsługuje odtwarzania audio.
-    </audio>
-
-    <button id="muteButton" onclick="toggleMute()">Wycisz</button>
-
-    <script>
-        const backgroundMusic = document.getElementById("backgroundMusic");
-        const muteButton = document.getElementById("muteButton");
-
-        function toggleMute() {
-            if (backgroundMusic.muted) {
-                backgroundMusic.muted = false;
-                muteButton.textContent = "Wycisz";
-            } else {
-                backgroundMusic.muted = true;
-                muteButton.textContent = "Włącz dźwięk";
-            }
-        }
-    </script>
 </body>
 </html>
