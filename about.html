@@ -36,27 +36,54 @@
         nav a:hover {
             background-color: #555;
         }
-        hero {
-             background-color: #333;
-            color: white;
-            padding: 10px;
+
+        #muteButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Smurf Clicker</h1>
         <nav>
-            <a href="guzio.html">Strona główna</a>
+            <a href="index.html">Strona główna</a>
             <a href="about.html">O grze</a>
+            <a href="ranking.html">Ranking</a>
+            <a href="contact.html">Kontakt</a>
         </nav>
     </header>
+    
     <div id="hero">
-        <h2>Witaj w Smurf Clicker!</h2>
-        <p>Klikaj w smerfa, aby zdobywać punkty.</p>
+        <h2>O grze</h2>
+        <p>Tutaj znajdziesz informacje na temat gry Smurf Clicker.</p>
     </div>
 
     <div id="content">
- dobry
+        <!-- Tu umieść treść strony "O grze" -->
     </div>
+
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="audio/music.mp3" type="audio/mpeg">
+        Twoja przeglądarka nie obsługuje odtwarzania audio.
+    </audio>
+
+    <button id="muteButton" onclick="toggleMute()">Wycisz</button>
+
+    <script>
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        const muteButton = document.getElementById("muteButton");
+
+        function toggleMute() {
+            if (backgroundMusic.muted) {
+                backgroundMusic.muted = false;
+                muteButton.textContent = "Wycisz";
+            } else {
+                backgroundMusic.muted = true;
+                muteButton.textContent = "Włącz dźwięk";
+            }
+        }
+    </script>
 </body>
 </html>
